@@ -1,0 +1,16 @@
+{
+  "placeholderImages": [
+    {
+      "id": "hero-beira",
+      "description": "Paisagem da região da Beira em Portugal",
+      "imageUrl": "https://picsum.photos/seed/beira123/1200/600",
+      "imageHint": "Beira Portugal landscape"
+    },
+    {
+      "id": "ancient-manuscript",
+      "description": "Manuscrito medieval antigo",
+      "imageUrl": "https://picsum.photos/seed/medievaldoc/600/400",
+      "imageHint": "medieval manuscript"
+    }
+  ]
+}
