@@ -38,12 +38,12 @@ export default function Home() {
           
           <div className="flex flex-wrap justify-center gap-6 animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-500">
             <Link href="/cadastro">
-              <Button size="lg" className="bg-accent hover:bg-accent/90 text-white border-none px-10 py-8 text-xl font-bold uppercase tracking-[0.2em] shadow-lg shadow-black/20">
+              <Button size="lg" className="bg-accent hover:bg-accent/90 text-white border-none px-10 py-8 text-xl font-bold uppercase tracking-[0.2em] shadow-lg shadow-black/20 rounded-full">
                 Unir-se à Linhagem
               </Button>
             </Link>
             <Link href="/origem">
-              <Button size="lg" variant="outline" className="border-white/50 text-white hover:bg-white hover:text-primary px-10 py-8 text-xl font-bold uppercase tracking-[0.2em]">
+              <Button size="lg" variant="outline" className="border-accent text-accent hover:bg-accent hover:text-white px-10 py-8 text-xl font-bold uppercase tracking-[0.2em] rounded-full transition-all bg-transparent">
                 A Origem Nobre
               </Button>
             </Link>
@@ -69,7 +69,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Features Grid with more noble styling */}
+      {/* Features Grid */}
       <section className="py-24 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -90,7 +90,7 @@ export default function Home() {
                 icon: "M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"
               }
             ].map((f, i) => (
-              <Card key={i} className="bg-white border-none shadow-xl hover:-translate-y-2 transition-transform duration-300">
+              <Card key={i} className="bg-white border-none shadow-xl hover:-translate-y-2 transition-transform duration-300 overflow-hidden">
                 <CardContent className="pt-10 text-center flex flex-col items-center">
                   <div className="w-16 h-16 bg-primary/5 rounded-full flex items-center justify-center mb-8 border border-accent/20">
                     <svg className="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={f.icon} /></svg>
