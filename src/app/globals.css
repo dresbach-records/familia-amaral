@@ -28,7 +28,7 @@
     --chart-3: 124 30% 30%;
     --chart-4: 45 40% 55%;
     --chart-5: 124 50% 10%;
-    --radius: 1rem; /* Cantos bem arredondados e suaves */
+    --radius: 1.75rem; /* Cantos ultra arredondados e suaves para realeza */
   }
   .dark {
     --background: 124 60% 5%;
