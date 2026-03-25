@@ -43,4 +43,4 @@ O projeto combina uma estética clássica de nobreza com tecnologias modernas pa
 Este projeto é de caráter histórico e cultural. O brasão e os nomes utilizados visam a preservação da memória familiar.
 
 ---
-*Honrando o passado para iluminar o futuro da nossa linhagem.*
+*Honrando o passado para iluminar o futuro da nossa linhagem.*# familia-amaral
