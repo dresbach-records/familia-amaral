@@ -1,3 +1,4 @@
+
 {
   "placeholderImages": [
     {
@@ -11,6 +12,12 @@
       "description": "Manuscrito medieval antigo",
       "imageUrl": "https://picsum.photos/seed/medievaldoc/600/400",
       "imageHint": "medieval manuscript"
+    },
+    {
+      "id": "vineyard-nobility",
+      "description": "Vinhedos antigos em Portugal",
+      "imageUrl": "https://picsum.photos/seed/vines789/800/600",
+      "imageHint": "ancient vineyard"
     }
   ]
 }

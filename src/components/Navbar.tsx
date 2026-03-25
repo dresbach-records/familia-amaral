@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import { HeraldryLogo } from './HeraldryLogo';
 import { Button } from '@/components/ui/button';
@@ -9,13 +10,14 @@ export function Navbar() {
         <Link href="/" className="flex items-center gap-3 group">
           <HeraldryLogo className="w-10 h-12 transition-transform group-hover:scale-105" />
           <div className="flex flex-col">
-            <span className="text-xl font-headline font-bold text-primary tracking-wide">Família Amaral</span>
-            <span className="text-[10px] uppercase tracking-[0.2em] text-accent font-semibold leading-none">Genealogia & Tradição</span>
+            <span className="text-xl font-headline font-bold text-primary tracking-wide leading-none">Família Amaral</span>
+            <span className="text-[10px] uppercase tracking-[0.2em] text-accent font-semibold leading-none mt-1">Genealogia & Tradição</span>
           </div>
         </Link>
         
         <div className="hidden md:flex items-center gap-8">
           <Link href="/origem" className="text-sm font-medium hover:text-accent transition-colors">Origem</Link>
+          <Link href="/historia" className="text-sm font-medium hover:text-accent transition-colors">A Saga</Link>
           <Link href="/arvore" className="text-sm font-medium hover:text-accent transition-colors">Árvore Genealógica</Link>
           <Link href="/cadastro" className="text-sm font-medium hover:text-accent transition-colors">Cadastrar-se</Link>
           <Link href="/login">
