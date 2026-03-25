@@ -18,6 +18,7 @@ import { Input } from '@/components/ui/input';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { HeraldryLogo } from '@/components/HeraldryLogo';
 import { useToast } from '@/hooks/use-toast';
+import { ShieldCheck, UserPlus, MapPin } from 'lucide-react';
 
 const formSchema = z.object({
   fullName: z.string().min(5, { message: 'Nome completo é obrigatório' }),
@@ -25,7 +26,7 @@ const formSchema = z.object({
   motherName: z.string().min(5, { message: 'Nome da mãe é necessário para conexão' }),
   birthDate: z.string().min(1, { message: 'Data de nascimento é necessária' }),
   location: z.string().min(2, { message: 'Cidade/Estado é obrigatório' }),
-  contact: z.string().optional(),
+  contact: z.string().email({ message: 'E-mail inválido' }),
 });
 
 export default function CadastroPage() {
@@ -51,58 +52,68 @@ export default function CadastroPage() {
       console.log(values);
       setIsSubmitting(false);
       toast({
-        title: "Registro Enviado",
-        description: "Seus dados foram encaminhados para análise e inclusão na árvore familiar.",
+        title: "Petição de Linhagem Enviada",
+        description: "Seus dados foram encaminhados ao conselho familiar para verificação e inclusão na árvore.",
       });
       form.reset();
-    }, 1500);
+    }, 2000);
   }
 
   return (
-    <div className="min-h-screen bg-muted/30 py-20 px-4">
-      <div className="container mx-auto max-w-2xl">
+    <div className="min-h-screen bg-[#fcfaf2] py-24 px-4 relative overflow-hidden">
+      {/* Background Decorative Element */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-3xl -z-10"></div>
+      
+      <div className="container mx-auto max-w-2xl relative z-10">
         <div className="text-center mb-12">
-          <HeraldryLogo className="w-16 h-20 mx-auto mb-6" />
-          <h1 className="text-4xl font-headline font-bold text-primary mb-4 tracking-tight">Cadastro de Linhagem</h1>
-          <p className="text-muted-foreground text-lg italic">
-            Registre-se para preservar seu lugar na história da Família Amaral.
+          <HeraldryLogo className="w-24 h-32 mx-auto mb-8 drop-shadow-2xl" />
+          <h1 className="text-4xl md:text-5xl font-headline font-bold text-primary mb-4 tracking-tight uppercase">
+            Unir-se à Linhagem
+          </h1>
+          <div className="w-24 h-1 bg-accent mx-auto mb-6"></div>
+          <p className="text-muted-foreground text-xl italic font-body max-w-lg mx-auto">
+            "Para que o nome Amaral perdure, cada ramo deve ser registrado e honrado."
           </p>
         </div>
 
-        <Card className="border-none shadow-2xl overflow-hidden">
-          <div className="h-2 bg-accent w-full"></div>
-          <CardHeader className="bg-white pb-8">
-            <CardTitle className="text-2xl font-headline">Informações Pessoais</CardTitle>
-            <CardDescription>
-              Esses dados serão utilizados para conectar você aos seus antepassados.
+        <Card className="border-2 border-accent/20 shadow-[0_20px_50px_rgba(0,0,0,0.1)] overflow-hidden rounded-[2rem] bg-white">
+          <div className="h-3 bg-primary w-full"></div>
+          <CardHeader className="pt-10 pb-6 text-center">
+            <CardTitle className="text-2xl font-headline text-primary flex items-center justify-center gap-2">
+              <ShieldCheck className="text-accent w-6 h-6" /> Registro de Descendente
+            </CardTitle>
+            <CardDescription className="font-body italic">
+              Preencha com cuidado para garantir a precisão histórica da nossa árvore.
             </CardDescription>
           </CardHeader>
-          <CardContent className="bg-white p-8">
+          <CardContent className="p-8 md:p-12">
             <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
                 <FormField
                   control={form.control}
                   name="fullName"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-primary font-bold">Nome Completo</FormLabel>
+                      <FormLabel className="text-primary font-bold uppercase tracking-widest text-xs flex items-center gap-2">
+                        <UserPlus className="w-3 h-3 text-accent" /> Nome Completo
+                      </FormLabel>
                       <FormControl>
-                        <Input placeholder="Seu nome completo" {...field} className="border-muted-foreground/20 focus:border-accent" />
+                        <Input placeholder="Seu nome completo" {...field} className="bg-muted/30 border-primary/10 focus:border-accent py-6" />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
                   )}
                 />
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <FormField
                     control={form.control}
                     name="fatherName"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-primary font-bold">Nome do Pai</FormLabel>
+                        <FormLabel className="text-primary font-bold uppercase tracking-widest text-xs">Nome do Pai</FormLabel>
                         <FormControl>
-                          <Input placeholder="Nome completo do pai" {...field} />
+                          <Input placeholder="Nome do progenitor" {...field} className="bg-muted/30 border-primary/10" />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -113,9 +124,9 @@ export default function CadastroPage() {
                     name="motherName"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-primary font-bold">Nome da Mãe</FormLabel>
+                        <FormLabel className="text-primary font-bold uppercase tracking-widest text-xs">Nome da Mãe</FormLabel>
                         <FormControl>
-                          <Input placeholder="Nome completo da mãe" {...field} />
+                          <Input placeholder="Nome da genitora" {...field} className="bg-muted/30 border-primary/10" />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -123,15 +134,15 @@ export default function CadastroPage() {
                   />
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <FormField
                     control={form.control}
                     name="birthDate"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-primary font-bold">Data de Nascimento</FormLabel>
+                        <FormLabel className="text-primary font-bold uppercase tracking-widest text-xs">Data de Nascimento</FormLabel>
                         <FormControl>
-                          <Input type="date" {...field} />
+                          <Input type="date" {...field} className="bg-muted/30 border-primary/10" />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -142,9 +153,11 @@ export default function CadastroPage() {
                     name="location"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-primary font-bold">Cidade / Estado</FormLabel>
+                        <FormLabel className="text-primary font-bold uppercase tracking-widest text-xs flex items-center gap-2">
+                          <MapPin className="w-3 h-3 text-accent" /> Localidade
+                        </FormLabel>
                         <FormControl>
-                          <Input placeholder="Ex: Viseu, Portugal" {...field} />
+                          <Input placeholder="Cidade, Estado, País" {...field} className="bg-muted/30 border-primary/10" />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -157,12 +170,12 @@ export default function CadastroPage() {
                   name="contact"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-primary font-bold">Contato (Opcional)</FormLabel>
+                      <FormLabel className="text-primary font-bold uppercase tracking-widest text-xs">E-mail de Contato</FormLabel>
                       <FormControl>
-                        <Input placeholder="E-mail ou Telefone" {...field} />
+                        <Input placeholder="seu@email.com" {...field} className="bg-muted/30 border-primary/10" />
                       </FormControl>
-                      <FormDescription>
-                        Apenas para comunicações institucionais da família.
+                      <FormDescription className="text-[10px] italic">
+                        Será usado apenas para comunicações oficiais da linhagem.
                       </FormDescription>
                       <FormMessage />
                     </FormItem>
@@ -172,15 +185,15 @@ export default function CadastroPage() {
                 <Button 
                   type="submit" 
                   disabled={isSubmitting}
-                  className="w-full bg-primary hover:bg-primary/90 text-white font-bold py-6 text-lg uppercase tracking-widest transition-all"
+                  className="w-full bg-primary hover:bg-primary/95 text-white font-bold py-8 text-xl uppercase tracking-[0.2em] transition-all rounded-full shadow-lg shadow-primary/20"
                 >
-                  {isSubmitting ? "Enviando..." : "Cadastrar na Linhagem"}
+                  {isSubmitting ? "Processando Registro..." : "Protocolar na Linhagem"}
                 </Button>
               </form>
             </Form>
           </CardContent>
-          <div className="bg-muted p-6 text-[11px] text-center text-muted-foreground uppercase tracking-widest font-semibold border-t">
-            Comprometidos com a privacidade e proteção dos dados da família.
+          <div className="bg-primary/5 p-6 text-[10px] text-center text-primary/60 uppercase tracking-[0.3em] font-bold border-t border-accent/10">
+            Tradição - Honra - Identidade
           </div>
         </Card>
       </div>
