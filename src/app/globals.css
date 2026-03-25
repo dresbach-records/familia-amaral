@@ -4,52 +4,52 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 45 30% 98%; /* Off-white pergaminho */
     --foreground: 124 55% 10%;
     --card: 0 0% 100%;
     --card-foreground: 124 55% 10%;
     --popover: 0 0% 100%;
     --popover-foreground: 124 55% 10%;
-    --primary: 124 55% 24%; /* #1B5E20 Dark Green */
+    --primary: 124 60% 15%; /* Verde Imperial mais profundo */
     --primary-foreground: 0 0% 100%;
-    --secondary: 45 67% 95%;
-    --secondary-foreground: 124 55% 24%;
-    --muted: 45 30% 96%;
-    --muted-foreground: 124 20% 40%;
-    --accent: 45 67% 47%; /* #C9A227 Gold */
+    --secondary: 45 67% 92%;
+    --secondary-foreground: 124 60% 15%;
+    --muted: 45 20% 94%;
+    --muted-foreground: 124 20% 35%;
+    --accent: 45 75% 45%; /* Ouro Nobre mais vibrante */
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 45 20% 85%;
-    --input: 45 20% 85%;
-    --ring: 124 55% 24%;
-    --chart-1: 124 55% 24%;
-    --chart-2: 45 67% 47%;
-    --chart-3: 124 30% 40%;
-    --chart-4: 45 40% 60%;
-    --chart-5: 124 50% 15%;
-    --radius: 0.5rem;
+    --border: 45 20% 80%;
+    --input: 45 20% 80%;
+    --ring: 45 75% 45%;
+    --chart-1: 124 60% 15%;
+    --chart-2: 45 75% 45%;
+    --chart-3: 124 30% 30%;
+    --chart-4: 45 40% 55%;
+    --chart-5: 124 50% 10%;
+    --radius: 0.3rem; /* Bordas mais retas, clássicas */
   }
   .dark {
-    --background: 124 55% 5%;
-    --foreground: 0 0% 98%;
-    --card: 124 55% 8%;
-    --card-foreground: 0 0% 98%;
-    --popover: 124 55% 8%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 45 67% 47%;
-    --primary-foreground: 124 55% 5%;
-    --secondary: 124 55% 15%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 124 55% 15%;
-    --muted-foreground: 124 20% 65%;
-    --accent: 45 67% 47%;
+    --background: 124 60% 5%;
+    --foreground: 45 67% 95%;
+    --card: 124 60% 8%;
+    --card-foreground: 45 67% 95%;
+    --popover: 124 60% 8%;
+    --popover-foreground: 45 67% 95%;
+    --primary: 45 75% 45%;
+    --primary-foreground: 124 60% 5%;
+    --secondary: 124 60% 12%;
+    --secondary-foreground: 45 67% 95%;
+    --muted: 124 60% 12%;
+    --muted-foreground: 45 20% 70%;
+    --accent: 45 75% 45%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 124 55% 20%;
-    --input: 124 55% 20%;
-    --ring: 45 67% 47%;
+    --border: 124 60% 15%;
+    --input: 124 60% 15%;
+    --ring: 45 75% 45%;
   }
 }
 
@@ -60,8 +60,9 @@
   body {
     @apply bg-background text-foreground;
     font-variant-ligatures: common-ligatures;
+    background-image: radial-gradient(circle at 50% 50%, rgba(201, 162, 39, 0.03) 0%, transparent 100%);
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-headline tracking-tight;
+    @apply font-headline tracking-tight uppercase;
   }
 }
