@@ -46,7 +46,7 @@ export function Footer() {
             <span>&copy; {new Date().getFullYear()} Genealogia Amaral. Todos os direitos reservados.</span>
             <span className="hidden md:block opacity-30">|</span>
             <a 
-              href="https://github.com/dresbach-records/familia-amaral.git" 
+              href="https://github.com/viniamaral2026-cpu/familia-amaral.git" 
               target="_blank" 
               rel="noopener noreferrer"
               className="flex items-center gap-2 hover:text-accent transition-colors text-white/60"
