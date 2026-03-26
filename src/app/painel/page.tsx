@@ -1,4 +1,3 @@
-
 "use client";
 
 import { DashboardWrapper } from '@/components/DashboardWrapper';
@@ -18,7 +17,8 @@ import {
   FileText,
   PlayCircle,
   Trees,
-  History
+  History,
+  GitBranch
 } from 'lucide-react';
 import Link from 'next/link';
 
