@@ -1,8 +1,7 @@
-
 "use client";
 
 import { HeraldryLogo } from './HeraldryLogo';
-import { Shield, Mail, Phone, ExternalLink, Globe, Landmark, Scale, Lock } from 'lucide-react';
+import { Shield, Mail, Phone, ExternalLink, Globe, Landmark, Scale, Lock, Github } from 'lucide-react';
 import Link from 'next/link';
 
 export function DashboardFooter() {
@@ -84,9 +83,20 @@ export function DashboardFooter() {
         </div>
 
         <div className="pt-10 border-t border-muted flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-[9px] uppercase tracking-[0.3em] text-muted-foreground font-bold">
-            Portal Privado - Acesso Exclusivo para Descendentes Autenticados
-          </p>
+          <div className="flex flex-col items-center md:items-start gap-2">
+            <p className="text-[9px] uppercase tracking-[0.3em] text-muted-foreground font-bold">
+              Portal Privado - Acesso Exclusivo para Descendentes Autenticados
+            </p>
+            <a 
+              href="https://github.com/dresbach-records/familia-amaral.git" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 hover:text-accent transition-colors text-[9px] uppercase tracking-widest font-bold text-primary/60"
+            >
+              <Github className="w-3 h-3" />
+              Desenvolvido e mantido por Vini Amaral
+            </a>
+          </div>
           <div className="flex items-center gap-8 text-[9px] font-bold text-primary uppercase tracking-widest">
             <span className="hover:text-accent cursor-pointer transition-colors">RootsTech 2025</span>
             <span className="hover:text-accent cursor-pointer transition-colors">Localizações de Arquivo</span>

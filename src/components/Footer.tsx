@@ -1,4 +1,5 @@
 import { HeraldryLogo } from './HeraldryLogo';
+import { Github } from 'lucide-react';
 
 export function Footer() {
   return (
@@ -36,8 +37,20 @@ export function Footer() {
           </div>
         </div>
         
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-[10px] uppercase tracking-widest text-white/40">
-          <span>&copy; {new Date().getFullYear()} Genealogia Amaral. Todos os direitos reservados.</span>
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-[10px] uppercase tracking-widest text-white/40">
+          <div className="flex flex-col md:flex-row items-center gap-4">
+            <span>&copy; {new Date().getFullYear()} Genealogia Amaral. Todos os direitos reservados.</span>
+            <span className="hidden md:block opacity-30">|</span>
+            <a 
+              href="https://github.com/dresbach-records/familia-amaral.git" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 hover:text-accent transition-colors text-white/60"
+            >
+              <Github className="w-3 h-3" />
+              Desenvolvido e mantido por Vini Amaral
+            </a>
+          </div>
           <span>Portugal & Brasil - Desde o Século XII</span>
         </div>
       </div>
