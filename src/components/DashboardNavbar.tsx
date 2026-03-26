@@ -28,6 +28,7 @@ import {
   DropdownMenuTrigger 
 } from '@/components/ui/dropdown-menu';
 import { useState } from 'react';
+import Image from 'next/image';
 
 export function DashboardNavbar() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -121,9 +122,14 @@ export function DashboardNavbar() {
             <Bell className="w-5 h-5" />
             <span className="absolute top-2 right-2 w-2 h-2 bg-accent rounded-full border border-primary"></span>
           </Button>
-          <Link href="/login">
-            <div className="w-10 h-10 bg-accent rounded-full flex items-center justify-center border-2 border-primary shadow-lg hover:scale-110 transition-transform cursor-pointer">
-               <User className="w-6 h-6 text-primary" />
+          <Link href="/painel">
+            <div className="w-10 h-10 bg-accent rounded-full flex items-center justify-center border-2 border-primary shadow-lg hover:scale-110 transition-transform cursor-pointer overflow-hidden relative">
+               <Image 
+                  src="/eu poli.JPG" 
+                  alt="Perfil" 
+                  fill 
+                  className="object-cover"
+               />
             </div>
           </Link>
         </div>

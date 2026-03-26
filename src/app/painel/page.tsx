@@ -21,6 +21,7 @@ import {
   GitBranch
 } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function PainelPage() {
   return (
@@ -56,10 +57,15 @@ export default function PainelPage() {
                 <div className="h-2 bg-accent w-full"></div>
                 <CardContent className="p-8 text-center">
                   <div className="w-24 h-24 bg-primary/5 rounded-full mx-auto mb-6 flex items-center justify-center border-2 border-accent/10 relative">
-                    <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center border border-accent/20">
-                      <Users className="w-8 h-8 text-primary" />
+                    <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center border border-accent/20 overflow-hidden relative">
+                      <Image 
+                        src="/eu poli.JPG" 
+                        alt="Marcos Vinícius" 
+                        fill 
+                        className="object-cover"
+                      />
                     </div>
-                    <div className="absolute bottom-1 right-1 w-8 h-8 bg-accent rounded-full flex items-center justify-center border-4 border-white shadow-lg">
+                    <div className="absolute bottom-1 right-1 w-8 h-8 bg-accent rounded-full flex items-center justify-center border-4 border-white shadow-lg z-10">
                       <Shield className="w-3 h-3 text-white" />
                     </div>
                   </div>
