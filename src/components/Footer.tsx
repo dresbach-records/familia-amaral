@@ -1,5 +1,6 @@
+
 import { HeraldryLogo } from './HeraldryLogo';
-import { Github } from 'lucide-react';
+import { Github, MessageCircle } from 'lucide-react';
 
 export function Footer() {
   return (
@@ -33,6 +34,9 @@ export function Footer() {
               <a href="/historia" className="hover:text-accent transition-colors">A Saga</a>
               <a href="/arvore" className="hover:text-accent transition-colors">Árvore</a>
               <a href="/cadastro" className="hover:text-accent transition-colors">Linhagem</a>
+              <a href="https://wa.me/5551933806899" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-accent hover:text-white transition-colors">
+                <MessageCircle className="w-3 h-3" /> WhatsApp
+              </a>
             </div>
           </div>
         </div>

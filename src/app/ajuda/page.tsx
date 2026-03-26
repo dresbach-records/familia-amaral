@@ -17,6 +17,8 @@ import {
 } from 'lucide-react';
 
 export default function AjudaPage() {
+  const whatsappUrl = "https://wa.me/5551933806899";
+
   return (
     <DashboardWrapper>
       <div className="min-h-screen bg-[#f8f6f0] pb-24">
@@ -75,13 +77,18 @@ export default function AjudaPage() {
                   <p className="text-xs text-muted-foreground">suporte@familiaamaral.pt</p>
                 </div>
               </div>
-              <div className="flex items-center gap-6 bg-white p-8 rounded-[2.5rem] shadow-lg border-l-4 border-accent">
-                <MessageCircle className="text-primary w-10 h-10" />
+              <a 
+                href={whatsappUrl} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-6 bg-white p-8 rounded-[2.5rem] shadow-lg border-l-4 border-accent hover:border-primary transition-all group"
+              >
+                <MessageCircle className="text-primary w-10 h-10 group-hover:text-accent transition-colors" />
                 <div>
-                  <h4 className="font-bold text-primary">Chat em Tempo Real</h4>
-                  <p className="text-xs text-muted-foreground">Seg a Sex, 09h às 18h</p>
+                  <h4 className="font-bold text-primary">WhatsApp Direto</h4>
+                  <p className="text-xs text-muted-foreground">+55 51 93380-6899</p>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
         </div>

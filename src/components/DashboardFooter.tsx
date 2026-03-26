@@ -1,7 +1,8 @@
+
 "use client";
 
 import { HeraldryLogo } from './HeraldryLogo';
-import { Shield, Mail, Phone, ExternalLink, Globe, Landmark, Scale, Lock, Github } from 'lucide-react';
+import { Shield, Mail, Phone, ExternalLink, Globe, Landmark, Scale, Lock, Github, MessageCircle } from 'lucide-react';
 import Link from 'next/link';
 
 export function DashboardFooter() {
@@ -73,6 +74,9 @@ export function DashboardFooter() {
             </h3>
             <div className="space-y-3 text-xs text-muted-foreground">
               <div className="flex items-center gap-2 font-medium text-primary">historiador@familiaamaral.pt</div>
+              <a href="https://wa.me/5551933806899" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-accent transition-colors">
+                <MessageCircle className="w-3 h-3" /> WhatsApp: +55 51 93380-6899
+              </a>
               <div className="flex items-center gap-2">Centro de Ajuda</div>
               <div className="flex items-center gap-2">Comunidade Global</div>
               <div className="pt-4 border-t border-muted mt-4">
