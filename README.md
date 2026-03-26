@@ -1,23 +1,21 @@
 # 🌿 Genealogia Família Amaral
 
-Este é um portal dedicado à preservação da história, tradição e linhagem da **Família Amaral**, cujas raízes remontam ao século XII na região da Beira, em Portugal.
-
-O projeto combina uma estética clássica de nobreza com tecnologias modernas para oferecer uma experiência imersiva aos descendentes e entusiastas da genealogia.
+Este é um portal dedicado à preservação da história, tradição e linhagem da **Família Amaral**, cujas raízes remontam ao século XII na região da Beira, em Portugal. O projeto combina uma estética clássica de nobreza com tecnologias modernas para oferecer uma experiência imersiva aos descendentes.
 
 ## 🏰 Características do Portal
 
-- **📜 A Saga Amaral:** Uma jornada lúdica e histórica que narra desde a origem toponímica do nome até a expansão da linhagem pelo Brasil.
-- **🌳 Árvore Genealógica:** Visualização interativa das conexões familiares e antepassados.
-- **🤖 Contexto Histórico com IA:** Integração com Google Genkit para gerar textos historiográficos precisos sobre o século XII e a região da Beira.
-- **🛡️ Heráldica Oficial:** Destaque para o Brasão da família em um layout de alto contraste (Verde Imperial e Ouro Nobre).
-- **📝 Cadastro de Linhagem:** Sistema para que novos membros registrem sua descendência para análise.
+- **📜 A Saga Amaral:** Uma jornada histórica que narra desde a origem do nome até a expansão da linhagem pelo Brasil.
+- **🌳 Árvore Genealógica Interativa:** Visualização detalhada das conexões familiares, incluindo o tronco principal de Marcos Vinícius.
+- **🛡️ Gabinete da Linhagem:** Área restrita para membros autenticados com ferramentas de pesquisa inspiradas no FamilySearch.
+- **🤖 Inteligência Historiográfica:** Integração com Google Genkit para gerar contextos históricos precisos sobre o século XII.
+- **📱 PWA Multiplataforma:** Instalável em Android, iOS e Desktop para acesso rápido como um aplicativo nativo.
 
 ## 🛠️ Tecnologias Utilizadas
 
 - **Framework:** [Next.js 15](https://nextjs.org/) (App Router)
 - **UI & Estilização:** [Tailwind CSS](https://tailwindcss.com/) & [ShadCN UI](https://ui.shadcn.com/)
 - **Inteligência Artificial:** [Genkit](https://firebase.google.com/docs/genkit) (Google AI - Gemini 2.0 Flash)
-- **Componentes:** Lucide React para ícones e Framer Motion para animações suaves.
+- **Ícones:** Lucide React
 - **Tipografia:** Literata (Serif) para um toque clássico e elegante.
 
 ## 🚀 Como Iniciar
@@ -38,9 +36,11 @@ O projeto combina uma estética clássica de nobreza com tecnologias modernas pa
    npm run dev
    ```
 
-## 📜 Licença
+## 📜 Licença e Créditos
 
-Este projeto é de caráter histórico e cultural. O brasão e os nomes utilizados visam a preservação da memória familiar.
+Este projeto é de caráter histórico e cultural. Desenvolvido e mantido por **Vini Amaral**.
+
+Repositório Oficial: [https://github.com/viniamaral2026-cpu/familia-amaral.git](https://github.com/viniamaral2026-cpu/familia-amaral.git)
 
 ---
-*Honrando o passado para iluminar o futuro da nossa linhagem.*# familia-amaral
+*Honrando o passado para iluminar o futuro da nossa linhagem.*
