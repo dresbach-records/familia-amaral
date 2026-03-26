@@ -1,0 +1,23 @@
+{
+  "name": "Família Amaral - Genealogia e Tradição",
+  "short_name": "Família Amaral",
+  "description": "Portal oficial da linhagem Amaral. Preservando a história e nobreza desde o século XII.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a1f0a",
+  "theme_color": "#0a1f0a",
+  "icons": [
+    {
+      "src": "/Brasão_de_armas_da_família_Amaral-removebg.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/Brasão_de_armas_da_família_Amaral-removebg.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
