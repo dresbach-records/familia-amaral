@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
@@ -32,6 +33,7 @@ const formSchema = z.object({
 
 export default function CadastroPage() {
   const { toast } = useToast();
+  const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -48,19 +50,21 @@ export default function CadastroPage() {
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true);
+    // Simulação de processamento e salvamento temporário
     setTimeout(() => {
-      console.log(values);
+      console.log('Dados do novo descendente:', values);
       setIsSubmitting(false);
       toast({
-        title: "Petição de Linhagem Enviada",
-        description: "Seus dados foram encaminhados ao conselho familiar para verificação e inclusão na árvore.",
+        title: "Petição de Linhagem Aprovada",
+        description: "Seja bem-vindo à posteridade, seu registro foi protocolado com sucesso.",
       });
-      form.reset();
+      // Redireciona para o painel mockado
+      router.push('/painel');
     }, 2000);
   }
 
   return (
-    <div className="min-h-screen bg-[#fcfaf2] py-12 px-4 relative overflow-hidden flex flex-col items-center">
+    <div className="min-h-screen bg-[#fcfaf2] py-12 px-4 relative overflow-hidden flex flex-col items-center justify-center">
       {/* Back Button */}
       <div className="w-full max-w-2xl mb-8">
         <Link href="/">
@@ -80,7 +84,7 @@ export default function CadastroPage() {
           <div className="w-16 h-1 bg-accent mx-auto mb-4"></div>
         </div>
 
-        <Card className="border-2 border-accent/20 shadow-[0_20px_50px_rgba(0,0,0,0.1)] overflow-hidden rounded-[3rem] bg-white">
+        <Card className="border-2 border-accent/20 shadow-[0_20px_50px_rgba(0,0,0,0.1)] overflow-hidden rounded-[3.5rem] bg-white">
           <div className="h-3 bg-primary w-full"></div>
           <CardHeader className="pt-8 pb-4 text-center">
             <CardTitle className="text-xl font-headline text-primary flex items-center justify-center gap-2">
@@ -185,7 +189,7 @@ export default function CadastroPage() {
                   disabled={isSubmitting}
                   className="w-full bg-primary hover:bg-primary/95 text-white font-bold py-7 text-lg uppercase tracking-[0.2em] transition-all rounded-full shadow-lg"
                 >
-                  {isSubmitting ? "Processando..." : "Protocolar Registro"}
+                  {isSubmitting ? "Autenticando na História..." : "Protocolar Registro"}
                 </Button>
               </form>
             </Form>
