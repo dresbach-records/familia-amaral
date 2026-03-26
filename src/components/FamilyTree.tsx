@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from 'react';
@@ -11,29 +12,28 @@ type Member = {
 };
 
 const mockData: Member = {
-  id: '1',
-  name: 'Gonçalo Rodriguez de Amaral',
-  dates: 'c. 1160 - 1210',
-  role: 'Patriarca (Viseu)',
+  id: 'root-grandparents',
+  name: 'Santos Cornélio do Amaral & Maria Gomes da Rocha',
+  dates: 'Tronco Paterno',
+  role: 'Avós de Marcos Vinícius',
   children: [
     {
-      id: '2',
-      name: 'Vasco Gonçalo de Amaral',
-      dates: 'c. 1190 - 1245',
-      role: 'Filho primogênito',
+      id: 'father-branch',
+      name: 'Januário do Amaral',
+      dates: 'Casado com Maria de Fátima Dresbach',
+      role: 'Pai de Marcos Vinícius',
       children: [
-        { id: '4', name: 'Martim Vasques', dates: 'c. 1220 - 1280', role: 'Cavaleiro' },
-        { id: '5', name: 'Aldonça Vasques', dates: 'c. 1225 - 1290', role: 'Dama de Beira' },
+        { id: 'membro-principal', name: 'Marcos Vinícius Dresbach do Amaral', dates: 'Perfil Atual', role: 'Membro Autenticado' },
+        { id: 'irma-1', name: 'Ana Cristina Dresbach do Amaral', dates: 'Geração Atual', role: 'Irmã' },
+        { id: 'irmao-2', name: 'Douglas Ismael Dresbach', dates: 'Geração Atual', role: 'Irmão' },
+        { id: 'irmao-3', name: 'Paulo Fernando Dresbach do Amaral', dates: 'Geração Atual', role: 'Irmão' },
       ]
     },
     {
-      id: '3',
-      name: 'Fernando Amaral',
-      dates: 'c. 1195 - 1250',
-      role: 'Segundo filho',
-      children: [
-        { id: '6', name: 'João Fernandes', dates: 'c. 1230 - 1285', role: 'Clérigo' },
-      ]
+      id: 'aunt-branch',
+      name: 'Rosemir Gomes do Amaral',
+      dates: 'Ramo Colateral',
+      role: 'Tia (Irmã do Pai)',
     }
   ]
 };
@@ -41,10 +41,10 @@ const mockData: Member = {
 function TreeNode({ member }: { member: Member }) {
   return (
     <div className="flex flex-col items-center">
-      <div className="relative p-6 bg-white border-2 border-primary rounded-lg shadow-md min-w-[200px] text-center group hover:bg-primary hover:text-white transition-all duration-300">
-        <h4 className="font-headline font-bold text-primary group-hover:text-white">{member.name}</h4>
+      <div className="relative p-6 bg-white border-2 border-primary rounded-[2rem] shadow-md min-w-[240px] text-center group hover:bg-primary hover:text-white transition-all duration-300">
+        <h4 className="font-headline font-bold text-primary group-hover:text-white text-sm">{member.name}</h4>
         <p className="text-[10px] text-accent font-bold uppercase tracking-widest mt-1">{member.dates}</p>
-        <p className="text-[10px] text-muted-foreground mt-1 italic group-hover:text-white/70">{member.role}</p>
+        <p className="text-[9px] text-muted-foreground mt-1 italic group-hover:text-white/70">{member.role}</p>
         
         {/* Connection line down */}
         {member.children && member.children.length > 0 && (
@@ -53,7 +53,7 @@ function TreeNode({ member }: { member: Member }) {
       </div>
 
       {member.children && member.children.length > 0 && (
-        <div className="flex gap-12 mt-12 relative">
+        <div className="flex gap-8 mt-12 relative">
           {/* Horizontal line connector */}
           {member.children.length > 1 && (
             <div className="absolute top-0 left-0 right-0 h-0.5 bg-accent -translate-y-6"></div>

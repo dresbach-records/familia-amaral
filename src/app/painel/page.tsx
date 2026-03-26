@@ -12,7 +12,6 @@ import {
   Calendar, 
   Award, 
   LogOut,
-  ChevronRight,
   Bell,
   Search,
   FileText,
@@ -42,7 +41,7 @@ export default function PainelPage() {
               Gabinete da Linhagem
             </h1>
             <p className="text-white/70 italic max-w-xl mx-auto text-lg leading-relaxed">
-              "Bem-vindo, nobre descendente. O passado e o futuro da nossa história convergem aqui."
+              "Bem-vindo, Marcos Vinícius. O passado e o futuro da nossa história convergem aqui."
             </p>
           </div>
         </section>
@@ -64,8 +63,8 @@ export default function PainelPage() {
                       <Shield className="w-3 h-3 text-white" />
                     </div>
                   </div>
-                  <h2 className="text-xl font-headline font-bold text-primary mb-1 uppercase tracking-tight">Membro Vini</h2>
-                  <p className="text-[10px] text-muted-foreground uppercase tracking-widest mb-8 font-bold">Linhagem Imperial</p>
+                  <h2 className="text-lg font-headline font-bold text-primary mb-1 uppercase tracking-tight">Marcos Vinícius</h2>
+                  <p className="text-[10px] text-muted-foreground uppercase tracking-widest mb-8 font-bold">Linhagem Dresbach do Amaral</p>
                   
                   <div className="space-y-5 text-left border-t border-muted pt-8">
                     <div className="flex items-center gap-4">
@@ -78,8 +77,8 @@ export default function PainelPage() {
                     <div className="flex items-center gap-4">
                       <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center"><MapPin className="w-4 h-4 text-accent" /></div>
                       <div>
-                         <span className="block text-[9px] uppercase font-bold text-muted-foreground tracking-widest">Origem Regional</span>
-                         <span className="text-xs text-primary font-bold">Viseu, Beira Alta</span>
+                         <span className="block text-[9px] uppercase font-bold text-muted-foreground tracking-widest">Tronco Principal</span>
+                         <span className="text-xs text-primary font-bold">Família Amaral</span>
                       </div>
                     </div>
                   </div>
@@ -100,14 +99,14 @@ export default function PainelPage() {
                 </h3>
                 <div className="space-y-5 relative z-10">
                   <div className="flex justify-between text-[10px] uppercase font-bold text-white/60">
-                    <span>Geração 14 (1560)</span>
-                    <span className="text-accent">75%</span>
+                    <span>Árvore Pessoal</span>
+                    <span className="text-accent">90%</span>
                   </div>
                   <div className="w-full h-2 bg-white/10 rounded-full overflow-hidden">
-                    <div className="w-3/4 h-full bg-accent shadow-[0_0_10px_rgba(201,162,39,0.5)]"></div>
+                    <div className="w-[90%] h-full bg-accent shadow-[0_0_10px_rgba(201,162,39,0.5)]"></div>
                   </div>
                   <p className="text-[10px] italic text-white/50 leading-relaxed">
-                    Ajude-nos a completar o Ramo de Porto enviando novos documentos digitalizados.
+                    Sua linhagem Dresbach do Amaral está quase completa.
                   </p>
                   <Button className="w-full bg-white/10 hover:bg-white/20 border-none rounded-full py-4 text-[9px] font-bold uppercase tracking-widest" asChild>
                     <Link href="/ajuda">Contribuir</Link>
@@ -118,13 +117,13 @@ export default function PainelPage() {
 
             {/* Main Content Area */}
             <div className="lg:col-span-3 space-y-8">
-              {/* FamilySearch-style Quick Navigation */}
+              {/* Quick Navigation */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {[
-                  { title: "Árvore", sub: "Explorar", icon: <GitBranch />, link: "/arvore" },
-                  { title: "Registros", sub: "Documentos", icon: <Search />, link: "/registros" },
-                  { title: "Estudar", sub: "Aprendizado", icon: <PlayCircle />, link: "/aprendizado" },
-                  { title: "Ajuda", sub: "Suporte", icon: <Bell />, link: "/ajuda" }
+                  { title: "Sua Árvore", sub: "Explorar", icon: <GitBranch className="w-4 h-4" />, link: "/arvore" },
+                  { title: "Registros", sub: "Documentos", icon: <Search className="w-4 h-4" />, link: "/registros" },
+                  { title: "Estudar", sub: "Aprendizado", icon: <PlayCircle className="w-4 h-4" />, link: "/aprendizado" },
+                  { title: "Ajuda", sub: "Suporte", icon: <Bell className="w-4 h-4" />, link: "/ajuda" }
                 ].map((item, i) => (
                   <Link href={item.link} key={i} className="group h-full">
                     <Card className="h-full border-none shadow-xl bg-white hover:bg-primary transition-all duration-500 rounded-[2.5rem] overflow-hidden">
@@ -146,42 +145,25 @@ export default function PainelPage() {
               <Card className="border-none shadow-2xl rounded-[3rem] bg-white overflow-hidden">
                 <CardHeader className="bg-primary/5 border-b border-primary/5 p-8 flex flex-row items-center justify-between">
                   <CardTitle className="text-primary font-headline text-xl flex items-center gap-3">
-                    <Bell className="w-6 h-6 text-accent" /> Anais Recentes da Linhagem
+                    <Bell className="w-6 h-6 text-accent" /> Notificações da Família
                   </CardTitle>
-                  <Button variant="ghost" className="text-accent text-[10px] font-bold uppercase tracking-widest hidden md:flex" asChild>
-                    <Link href="/registros">Ver Todas</Link>
-                  </Button>
                 </CardHeader>
                 <CardContent className="p-0">
                   <div className="divide-y divide-muted">
                     {[
                       { 
-                        title: "Novo Documento Identificado", 
-                        desc: "Certidão de casamento de Gonçalo Amaral (1723) foi digitalizada e anexada ao Ramo de Viseu.", 
-                        time: "Há 2 horas",
-                        tag: "Novo Arquivo",
-                        link: "/registros"
-                      },
-                      { 
-                        title: "Sugestão de Parentesco", 
-                        desc: "Baseado em sua localidade, você pode estar conectado ao ramo 'Amaral de Oliveira' do Sudeste.", 
-                        time: "Há 1 dia",
-                        tag: "Dica Genética",
+                        title: "Linhagem Dresbach do Amaral", 
+                        desc: "Seus dados foram autenticados com sucesso no tronco principal da família.", 
+                        time: "Agora",
+                        tag: "Perfil",
                         link: "/arvore"
                       },
                       { 
-                        title: "RootsTech 2025: Família Amaral", 
-                        desc: "As inscrições para o Grande Conclave de Descendentes em Portugal estão oficialmente abertas.", 
-                        time: "Há 3 dias",
-                        tag: "Evento Real",
-                        link: "/aprendizado"
-                      },
-                      { 
-                        title: "Laboratório de IA", 
-                        desc: "Nova ferramenta de restauração de fotos antigas está disponível para membros nível Imperial.", 
-                        time: "Há 1 semana",
-                        tag: "Inovação",
-                        link: "/ajuda"
+                        title: "Conexão Januário do Amaral", 
+                        desc: "Novos documentos vinculados ao seu pai foram digitalizados.", 
+                        time: "Há 1 hora",
+                        tag: "Documento",
+                        link: "/registros"
                       }
                     ].map((item, i) => (
                       <Link href={item.link} key={i} className="block group">
@@ -196,37 +178,9 @@ export default function PainelPage() {
                       </Link>
                     ))}
                   </div>
-                  <div className="p-8 bg-primary/5 text-center">
-                    <Button variant="ghost" className="text-primary text-[10px] font-bold uppercase tracking-[0.3em] hover:text-accent" asChild>
-                      <Link href="/registros">Carregar mais atividades históricas</Link>
-                    </Button>
-                  </div>
                 </CardContent>
               </Card>
-
-              {/* Partners Banner */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Link href="/ajuda" className="group">
-                  <Card className="h-full border-none shadow-xl rounded-[2.5rem] bg-gradient-to-br from-white to-muted p-8 flex items-center gap-6 group-hover:bg-accent group-hover:text-white transition-all">
-                    <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center group-hover:bg-white/20"><Trees className="text-accent group-hover:text-white" /></div>
-                    <div>
-                        <h4 className="font-bold text-primary text-sm uppercase tracking-wider group-hover:text-white">Mapeamento de DNA</h4>
-                        <p className="text-[10px] text-muted-foreground group-hover:text-white/80">Conecte seus resultados do MyHeritage ou Ancestry.</p>
-                    </div>
-                  </Card>
-                </Link>
-                <Link href="/registros" className="group">
-                  <Card className="h-full border-none shadow-xl rounded-[2.5rem] bg-gradient-to-br from-white to-muted p-8 flex items-center gap-6 group-hover:bg-primary group-hover:text-white transition-all">
-                    <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center group-hover:bg-white/20"><Search className="text-accent group-hover:text-white" /></div>
-                    <div>
-                        <h4 className="font-bold text-primary text-sm uppercase tracking-wider group-hover:text-white">Busca em Registros</h4>
-                        <p className="text-[10px] text-muted-foreground group-hover:text-white/80">Acesso direto ao banco de dados do FamilySearch.</p>
-                    </div>
-                  </Card>
-                </Link>
-              </div>
             </div>
-
           </div>
         </div>
       </div>
