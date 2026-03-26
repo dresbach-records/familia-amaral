@@ -1,3 +1,4 @@
+
 "use client";
 
 import { DashboardWrapper } from '@/components/DashboardWrapper';
@@ -108,7 +109,9 @@ export default function PainelPage() {
                   <p className="text-[10px] italic text-white/50 leading-relaxed">
                     Ajude-nos a completar o Ramo de Porto enviando novos documentos digitalizados.
                   </p>
-                  <Button className="w-full bg-white/10 hover:bg-white/20 border-none rounded-full py-4 text-[9px] font-bold uppercase tracking-widest">Contribuir</Button>
+                  <Button className="w-full bg-white/10 hover:bg-white/20 border-none rounded-full py-4 text-[9px] font-bold uppercase tracking-widest" asChild>
+                    <Link href="/ajuda">Contribuir</Link>
+                  </Button>
                 </div>
               </Card>
             </div>
@@ -123,7 +126,7 @@ export default function PainelPage() {
                   { title: "Estudar", sub: "Aprendizado", icon: <PlayCircle />, link: "/aprendizado" },
                   { title: "Ajuda", sub: "Suporte", icon: <Bell />, link: "/ajuda" }
                 ].map((item, i) => (
-                  <Link href={item.link} key={i} className="group">
+                  <Link href={item.link} key={i} className="group h-full">
                     <Card className="h-full border-none shadow-xl bg-white hover:bg-primary transition-all duration-500 rounded-[2.5rem] overflow-hidden">
                       <CardContent className="p-8 flex flex-col items-center text-center">
                         <div className="p-4 bg-primary/5 rounded-2xl group-hover:bg-white/10 transition-colors mb-4">
@@ -145,7 +148,9 @@ export default function PainelPage() {
                   <CardTitle className="text-primary font-headline text-xl flex items-center gap-3">
                     <Bell className="w-6 h-6 text-accent" /> Anais Recentes da Linhagem
                   </CardTitle>
-                  <Button variant="ghost" className="text-accent text-[10px] font-bold uppercase tracking-widest hidden md:flex">Ver Todas</Button>
+                  <Button variant="ghost" className="text-accent text-[10px] font-bold uppercase tracking-widest hidden md:flex" asChild>
+                    <Link href="/registros">Ver Todas</Link>
+                  </Button>
                 </CardHeader>
                 <CardContent className="p-0">
                   <div className="divide-y divide-muted">
@@ -154,40 +159,46 @@ export default function PainelPage() {
                         title: "Novo Documento Identificado", 
                         desc: "Certidão de casamento de Gonçalo Amaral (1723) foi digitalizada e anexada ao Ramo de Viseu.", 
                         time: "Há 2 horas",
-                        tag: "Novo Arquivo"
+                        tag: "Novo Arquivo",
+                        link: "/registros"
                       },
                       { 
                         title: "Sugestão de Parentesco", 
                         desc: "Baseado em sua localidade, você pode estar conectado ao ramo 'Amaral de Oliveira' do Sudeste.", 
                         time: "Há 1 dia",
-                        tag: "Dica Genética"
+                        tag: "Dica Genética",
+                        link: "/arvore"
                       },
                       { 
                         title: "RootsTech 2025: Família Amaral", 
                         desc: "As inscrições para o Grande Conclave de Descendentes em Portugal estão oficialmente abertas.", 
                         time: "Há 3 dias",
-                        tag: "Evento Real"
+                        tag: "Evento Real",
+                        link: "/aprendizado"
                       },
                       { 
                         title: "Laboratório de IA", 
                         desc: "Nova ferramenta de restauração de fotos antigas está disponível para membros nível Imperial.", 
                         time: "Há 1 semana",
-                        tag: "Inovação"
+                        tag: "Inovação",
+                        link: "/ajuda"
                       }
                     ].map((item, i) => (
-                      <div key={i} className="p-8 hover:bg-muted/30 transition-all group cursor-pointer border-l-4 border-transparent hover:border-accent">
-                        <div className="flex justify-between items-start mb-3">
-                          <span className="text-[9px] bg-primary/10 text-primary px-3 py-1 rounded-full font-bold uppercase tracking-widest">{item.tag}</span>
-                          <span className="text-[10px] font-bold text-muted-foreground uppercase">{item.time}</span>
+                      <Link href={item.link} key={i} className="block group">
+                        <div className="p-8 hover:bg-muted/30 transition-all cursor-pointer border-l-4 border-transparent hover:border-accent">
+                          <div className="flex justify-between items-start mb-3">
+                            <span className="text-[9px] bg-primary/10 text-primary px-3 py-1 rounded-full font-bold uppercase tracking-widest">{item.tag}</span>
+                            <span className="text-[10px] font-bold text-muted-foreground uppercase">{item.time}</span>
+                          </div>
+                          <h4 className="font-headline font-bold text-primary text-lg group-hover:text-accent transition-colors mb-2">{item.title}</h4>
+                          <p className="text-sm text-muted-foreground leading-relaxed italic">{item.desc}</p>
                         </div>
-                        <h4 className="font-headline font-bold text-primary text-lg group-hover:text-accent transition-colors mb-2">{item.title}</h4>
-                        <p className="text-sm text-muted-foreground leading-relaxed italic">{item.desc}</p>
-                      </div>
+                      </Link>
                     ))}
                   </div>
                   <div className="p-8 bg-primary/5 text-center">
-                    <Button variant="ghost" className="text-primary text-[10px] font-bold uppercase tracking-[0.3em] hover:text-accent">
-                      Carregar mais atividades históricas
+                    <Button variant="ghost" className="text-primary text-[10px] font-bold uppercase tracking-[0.3em] hover:text-accent" asChild>
+                      <Link href="/registros">Carregar mais atividades históricas</Link>
                     </Button>
                   </div>
                 </CardContent>
@@ -195,20 +206,24 @@ export default function PainelPage() {
 
               {/* Partners Banner */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Card className="border-none shadow-xl rounded-[2.5rem] bg-gradient-to-br from-white to-muted p-8 flex items-center gap-6">
-                   <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center"><Trees className="text-accent" /></div>
-                   <div>
-                      <h4 className="font-bold text-primary text-sm uppercase tracking-wider">Mapeamento de DNA</h4>
-                      <p className="text-[10px] text-muted-foreground">Conecte seus resultados do MyHeritage ou Ancestry.</p>
-                   </div>
-                </Card>
-                <Card className="border-none shadow-xl rounded-[2.5rem] bg-gradient-to-br from-white to-muted p-8 flex items-center gap-6">
-                   <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center"><Search className="text-accent" /></div>
-                   <div>
-                      <h4 className="font-bold text-primary text-sm uppercase tracking-wider">Busca em Registros</h4>
-                      <p className="text-[10px] text-muted-foreground">Acesso direto ao banco de dados do FamilySearch.</p>
-                   </div>
-                </Card>
+                <Link href="/ajuda" className="group">
+                  <Card className="h-full border-none shadow-xl rounded-[2.5rem] bg-gradient-to-br from-white to-muted p-8 flex items-center gap-6 group-hover:bg-accent group-hover:text-white transition-all">
+                    <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center group-hover:bg-white/20"><Trees className="text-accent group-hover:text-white" /></div>
+                    <div>
+                        <h4 className="font-bold text-primary text-sm uppercase tracking-wider group-hover:text-white">Mapeamento de DNA</h4>
+                        <p className="text-[10px] text-muted-foreground group-hover:text-white/80">Conecte seus resultados do MyHeritage ou Ancestry.</p>
+                    </div>
+                  </Card>
+                </Link>
+                <Link href="/registros" className="group">
+                  <Card className="h-full border-none shadow-xl rounded-[2.5rem] bg-gradient-to-br from-white to-muted p-8 flex items-center gap-6 group-hover:bg-primary group-hover:text-white transition-all">
+                    <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center group-hover:bg-white/20"><Search className="text-accent group-hover:text-white" /></div>
+                    <div>
+                        <h4 className="font-bold text-primary text-sm uppercase tracking-wider group-hover:text-white">Busca em Registros</h4>
+                        <p className="text-[10px] text-muted-foreground group-hover:text-white/80">Acesso direto ao banco de dados do FamilySearch.</p>
+                    </div>
+                  </Card>
+                </Link>
               </div>
             </div>
 

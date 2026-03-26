@@ -51,10 +51,10 @@ export function DashboardNavbar() {
               <GitBranch className="w-4 h-4" /> Árvore <ChevronDown className="w-3 h-3" />
             </DropdownMenuTrigger>
             <DropdownMenuContent className="bg-white border-2 border-accent/20 rounded-2xl p-2 min-w-[200px]">
-              <DropdownMenuItem className="rounded-xl focus:bg-primary/10"><Link href="/arvore" className="w-full">Árvore Familiar</Link></DropdownMenuItem>
-              <DropdownMenuItem className="rounded-xl focus:bg-primary/10"><Link href="/painel" className="w-full">Pessoas</Link></DropdownMenuItem>
-              <DropdownMenuItem className="rounded-xl focus:bg-primary/10"><Link href="/painel" className="w-full">Recordações</Link></DropdownMenuItem>
-              <DropdownMenuItem className="rounded-xl focus:bg-primary/10"><Link href="/painel" className="w-full">Ordenanças Prontas</Link></DropdownMenuItem>
+              <DropdownMenuItem className="rounded-xl focus:bg-primary/10" asChild><Link href="/arvore">Árvore Familiar</Link></DropdownMenuItem>
+              <DropdownMenuItem className="rounded-xl focus:bg-primary/10" asChild><Link href="/arvore">Pesquisar Pessoas</Link></DropdownMenuItem>
+              <DropdownMenuItem className="rounded-xl focus:bg-primary/10" asChild><Link href="/painel">Recordações</Link></DropdownMenuItem>
+              <DropdownMenuItem className="rounded-xl focus:bg-primary/10" asChild><Link href="/arvore">Novos Ramos</Link></DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
 
@@ -63,12 +63,12 @@ export function DashboardNavbar() {
               <Search className="w-4 h-4" /> Pesquisar <ChevronDown className="w-3 h-3" />
             </DropdownMenuTrigger>
             <DropdownMenuContent className="bg-white border-2 border-accent/20 rounded-2xl p-2 min-w-[220px]">
-              <DropdownMenuItem className="rounded-xl focus:bg-primary/10"><Link href="/registros" className="w-full">Registros Históricos</Link></DropdownMenuItem>
-              <DropdownMenuItem className="rounded-xl focus:bg-primary/10"><Link href="/registros" className="w-full">Imagens de Documentos</Link></DropdownMenuItem>
-              <DropdownMenuItem className="rounded-xl focus:bg-primary/10"><Link href="/registros" className="w-full">Genealogias</Link></DropdownMenuItem>
-              <DropdownMenuItem className="rounded-xl focus:bg-primary/10"><Link href="/registros" className="w-full">Catálogo do Arquivo</Link></DropdownMenuItem>
+              <DropdownMenuItem className="rounded-xl focus:bg-primary/10" asChild><Link href="/registros">Registros Históricos</Link></DropdownMenuItem>
+              <DropdownMenuItem className="rounded-xl focus:bg-primary/10" asChild><Link href="/registros">Imagens de Documentos</Link></DropdownMenuItem>
+              <DropdownMenuItem className="rounded-xl focus:bg-primary/10" asChild><Link href="/registros">Genealogias</Link></DropdownMenuItem>
+              <DropdownMenuItem className="rounded-xl focus:bg-primary/10" asChild><Link href="/registros">Catálogo do Arquivo</Link></DropdownMenuItem>
               <DropdownMenuSeparator />
-              <DropdownMenuItem className="rounded-xl focus:bg-primary/10"><Link href="/registros" className="w-full">Wiki de Pesquisa</Link></DropdownMenuItem>
+              <DropdownMenuItem className="rounded-xl focus:bg-primary/10" asChild><Link href="/aprendizado">Wiki de Pesquisa</Link></DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
 
@@ -77,9 +77,9 @@ export function DashboardNavbar() {
               <Share2 className="w-4 h-4" /> Participar <ChevronDown className="w-3 h-3" />
             </DropdownMenuTrigger>
             <DropdownMenuContent className="bg-white border-2 border-accent/20 rounded-2xl p-2 min-w-[200px]">
-              <DropdownMenuItem className="rounded-xl focus:bg-primary/10">Indexação Online</DropdownMenuItem>
-              <DropdownMenuItem className="rounded-xl focus:bg-primary/10">Revisar Nomes</DropdownMenuItem>
-              <DropdownMenuItem className="rounded-xl focus:bg-primary/10">Laboratórios de IA</DropdownMenuItem>
+              <DropdownMenuItem className="rounded-xl focus:bg-primary/10" asChild><Link href="/ajuda">Indexação Online</Link></DropdownMenuItem>
+              <DropdownMenuItem className="rounded-xl focus:bg-primary/10" asChild><Link href="/ajuda">Revisar Nomes</Link></DropdownMenuItem>
+              <DropdownMenuItem className="rounded-xl focus:bg-primary/10" asChild><Link href="/ajuda">Laboratórios de IA</Link></DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
 
@@ -88,10 +88,10 @@ export function DashboardNavbar() {
               <GraduationCap className="w-4 h-4" /> Aprender <ChevronDown className="w-3 h-3" />
             </DropdownMenuTrigger>
             <DropdownMenuContent className="bg-white border-2 border-accent/20 rounded-2xl p-2 min-w-[200px]">
-              <DropdownMenuItem className="rounded-xl focus:bg-primary/10"><Link href="/aprendizado" className="w-full">Centro de Aprendizado</Link></DropdownMenuItem>
-              <DropdownMenuItem className="rounded-xl focus:bg-primary/10">RootsTech 2025</DropdownMenuItem>
-              <DropdownMenuItem className="rounded-xl focus:bg-primary/10">Blog da Linhagem</DropdownMenuItem>
-              <DropdownMenuItem className="rounded-xl focus:bg-primary/10">Consultas Virtuais</DropdownMenuItem>
+              <DropdownMenuItem className="rounded-xl focus:bg-primary/10" asChild><Link href="/aprendizado">Centro de Aprendizado</Link></DropdownMenuItem>
+              <DropdownMenuItem className="rounded-xl focus:bg-primary/10" asChild><Link href="/aprendizado">RootsTech 2025</Link></DropdownMenuItem>
+              <DropdownMenuItem className="rounded-xl focus:bg-primary/10" asChild><Link href="/historia">Blog da Linhagem</Link></DropdownMenuItem>
+              <DropdownMenuItem className="rounded-xl focus:bg-primary/10" asChild><Link href="/ajuda">Consultas Virtuais</Link></DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
